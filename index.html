@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Quoter</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/spinner.css">
+</head>
+
+<body class="bg-gradient-to-r from-cyan-600 to-orange-600">
+    <div class="container  mx-auto mt-10 bg-white pb-10 shadow-2xl shadow-black">
+        <div class="bg-teal-500 text-white  uppercase text-center p-3 font-bold  ">
+            <h1>Insurance Quoter</h1>
+        </div>
+        <form class=" max-w-lg  mx-auto mt-10" id="insurance-form">
+            <div class=" md:flex-row  flex-col  flex gap-2 items-center mb-5 ">
+                <label class="uppercase font-bold mr-2 w-20" for="brand">Brand:</label>
+                <select class=" flex-1  bg-gray-100 p-3 appearance-none w-11/12" id="brand">
+                    <option value="">- Select -</option>
+                    <option value="1">American</option>
+                    <option value="2">Asian</option>
+                    <option value="3">Europe</option>
+                </select>
+            </div>
+            <div class="md:flex-row  flex-col flex gap-2 items-center mb-5 ">
+                <label class="uppercase font-bold mr-2 w-20" for="year">Year:</label>
+                <select class=" flex-1 bg-gray-100 p-3 appearance-none w-11/12" id="year"></select>
+            </div>
+            <fieldset>
+                <legend class="uppercase text-center text-2xl mb-5 font-bold">Insurance Type</legend>
+                <div class="flex justify-around mt-5">
+                    <div>
+                        <label class="font-bold uppercase mr-2" for="basic">Basic</label>
+                        <input type="radio" name="type" value="basic" checked>
+                    </div>
+                    <div class=" flex items-center">
+                        <label class="font-bold uppercase mr-2" for="complete">Complete</label>
+                        <input type="radio" name="type" value="basic">
+                    </div>
+                </div>
+            </fieldset>
+            <div class="spinner" hidden>
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <div class="results"></div>
+            <div class="flex justify-center mt-10">
+                <button
+                    class="mx-auto bg-teal-500 hover:bg-teal-700 px-20 py-2 rounded text-white font-bold w-11/12 md:w-4/6"
+                    id="btn-insurance">Quote Insurance </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
