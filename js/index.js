@@ -1,5 +1,5 @@
 //Declarations
-const formulario = document.querySelector('#insurance-form')
+const form = document.querySelector('#insurance-form')
 const brand = document.querySelector('#brand');
 const year = document.querySelector('#year');
 const results = document.querySelector('#results');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 EventListeners();
 function EventListeners() {
-    formulario.addEventListener('submit', quoterInsurance)
+    form.addEventListener('submit', quoterInsurance)
 
 }
 
@@ -26,9 +26,6 @@ function Insurance(brand, year, type) {
 }
 
 Insurance.prototype.Quoter = function () {
-    /*1.15
-    1.05
-    1.35*/
     let amount;
     const base = 2000;
 
@@ -68,8 +65,10 @@ function IU() { };
 const iu = new IU();
 
 IU.prototype.fillYear = () => {
+    //Get the actual year
     const max = new Date().getFullYear();
     const min = max - 15;
+    //Fill the select with the years
     for (i = max; i >= min; i--) {
         const option = document.createElement('option');
         option.textContent = i;
@@ -79,6 +78,7 @@ IU.prototype.fillYear = () => {
 }
 
 IU.prototype.Alert = (messege, type) => {
+
     const div = document.createElement('div');
 
     if (type === 'error') {
@@ -90,7 +90,7 @@ IU.prototype.Alert = (messege, type) => {
     }
     div.classList.add('mt-10');
     div.textContent = messege;
-    formulario.insertBefore(div, results);
+    form.insertBefore(div, results);
     btnQuote.disabled = true;
     btnQuote.classList.add('opacity-50')
 
@@ -139,7 +139,7 @@ IU.prototype.showResult = (total, insurance) => {
 }
 
 
-//functions
+//Functions
 function quoterInsurance(e) {
     e.preventDefault();
 
